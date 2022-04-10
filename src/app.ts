@@ -1,11 +1,10 @@
 import 'dotenv/config'
 import express from 'express'
 
-const app = express()
+import { router } from './routes'
 
-app.get('/', (request, response) => {
-  return response.send('<h1>Hello World</h1>')
-})
+const app = express()
+app.use(router)
 
 const port = process.env.PORT || 3333
 
